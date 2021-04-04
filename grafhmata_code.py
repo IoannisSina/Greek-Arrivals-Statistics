@@ -36,9 +36,12 @@ def grafhma_1():
     plt.xticks(xpos, years)
 
     #plot title and labels
-    plt.title("Συνολικές αφίξεις στην Ελλάδα για την πενταετία 2011-2015 ")
-    plt.xlabel("Χρονιά")
-    plt.ylabel("Αφίξεις")
+    # plt.title("Συνολικές αφίξεις στην Ελλάδα για την πενταετία 2011-2015 ")
+    # plt.xlabel("Χρονιά")
+    # plt.ylabel("Αφίξεις")
+    plt.title("Number of arrivals in Greece from 2011 to 2015")
+    plt.xlabel("Year")
+    plt.ylabel("Arrivals")
 
     #plots
     plot = plt.bar(xpos, total_tourists)
@@ -50,8 +53,8 @@ def grafhma_1():
         plt.text(bar.get_x() + bar.get_width()/2.0, height, '%d' % int(height), ha='center', va='bottom')
     
     #maximizes plot
-    manager = plt.get_current_fig_manager()
-    manager.resize(*manager.window.maxsize())
+    # manager = plt.get_current_fig_manager()
+    # manager.resize(*manager.window.maxsize())
     plt.show()
 
 def grafhma_2(grafhma_no):
@@ -122,7 +125,7 @@ def grafhma_2(grafhma_no):
         title = str(grafhma_no)
         grafhma_2_plots(countries_names_each[grafhma_no-2011], countries_total_each[grafhma_no-2011], title)
 
-    
+
 
 
 def grafhma_3():
@@ -165,16 +168,19 @@ def grafhma_3():
     plt.xticks(xpos, years)
 
     #bars positions and labels
-    plt.bar(xpos - 0.15, air_list, color = 'm', width = 0.1, label='ΑΕΡΟΠΟΡΙΚΩΣ')
-    plt.bar(xpos - 0.05, railway_list, color = 'y', width = 0.1, label='ΣΙΔ/ΚΩΣ')
-    plt.bar(xpos + 0.05 , sea_list, color = 'r', width = 0.1, label='ΘΑΛΑΣΣΙΩΣ')
-    plt.bar(xpos + 0.15, road_list, color = 'c', width = 0.1, label='ΟΔΙΚΩΣ')
+    plt.bar(xpos - 0.15, air_list, color = 'm', width = 0.1, label='AIRPLANE')
+    plt.bar(xpos - 0.05, railway_list, color = 'y', width = 0.1, label='TRAIN')
+    plt.bar(xpos + 0.05 , sea_list, color = 'r', width = 0.1, label='BOAT')
+    plt.bar(xpos + 0.15, road_list, color = 'c', width = 0.1, label='CAR')
 
 
     #set title and labels
-    plt.title("Aφίξεις τουριστών στην Ελλάδα ανά μέσο μεταφοράς για την πενταετία 2011-2015 ")
-    plt.xlabel("Χρονιά")
-    plt.ylabel("Αφίξεις")
+    # plt.title("Aφίξεις τουριστών στην Ελλάδα ανά μέσο μεταφοράς για την πενταετία 2011-2015 ")
+    # plt.xlabel("Χρονιά")
+    # plt.ylabel("Αφίξεις")
+    plt.title("Arrivals of tourists in Greece by means of transport 2011-2015")
+    plt.xlabel("Year")
+    plt.ylabel("Arrivals")
 
     #set legend so that it does not overlap
     plt.legend(bbox_to_anchor=(0., 1.05, 1, .102), loc=3,
@@ -187,8 +193,8 @@ def grafhma_3():
 
 
     #maximizes plot
-    manager = plt.get_current_fig_manager()
-    manager.resize(*manager.window.maxsize())
+    #manager = plt.get_current_fig_manager()
+    #manager.resize(*manager.window.maxsize())
 
     #log scale so all bars can be seen
     plt.yscale('log')
@@ -226,22 +232,25 @@ def grafhma_4():
     plt.xticks(xpos, years)
 
     #bars positions and labels
-    plt.bar(xpos - 0.15, all_years_quarters[0], color = 'r', width = 0.1, label='1ο τρίμηνο')
-    plt.bar(xpos - 0.05, all_years_quarters[1], color = 'y', width = 0.1, label='2ο τρίμηνο')
-    plt.bar(xpos + 0.05 , all_years_quarters[2], color = 'm', width = 0.1, label='3ο τρίμηνο')
-    plt.bar(xpos + 0.15, all_years_quarters[3], color = 'c', width = 0.1, label='4ο τρίμηνο')
+    plt.bar(xpos - 0.15, all_years_quarters[0], color = 'r', width = 0.1, label='First quarter')
+    plt.bar(xpos - 0.05, all_years_quarters[1], color = 'y', width = 0.1, label='Second quarter')
+    plt.bar(xpos + 0.05 , all_years_quarters[2], color = 'm', width = 0.1, label='Third quarter')
+    plt.bar(xpos + 0.15, all_years_quarters[3], color = 'c', width = 0.1, label='Fourth quarter')
 
 
     #set title and labels
-    plt.title("Αφίξεις τουριστών στην Ελλάδα ανά τρίμηνο για την πενταετία 2011-2015")
-    plt.xlabel("Χρονιά")
-    plt.ylabel("Αφίξεις")
+    # plt.title("Αφίξεις τουριστών στην Ελλάδα ανά τρίμηνο για την πενταετία 2011-2015")
+    # plt.xlabel("Χρονιά")
+    # plt.ylabel("Αφίξεις")
+    plt.title("Arrivals of tourists in Greece per quarter 2011-2015")
+    plt.xlabel("Year")
+    plt.ylabel("Arrivals")
     plt.legend()
 
 
     #maximizes plot
-    manager = plt.get_current_fig_manager()
-    manager.resize(*manager.window.maxsize())
+    # manager = plt.get_current_fig_manager()
+    # manager.resize(*manager.window.maxsize())
 
     plt.show()
 
@@ -252,9 +261,12 @@ def grafhma_2_plots(countries_names, countries_total, title):
     plt.xticks(xpos, countries_names,  ha='center', fontsize=7)
 
     # #plot title and labels
-    plt.title("10 πρώτες Χώρες καταγωγής με το μεγαλύτερο μερίδιο στις αφίξεις "+title)
-    plt.xlabel("Χώρα")
-    plt.ylabel("Αφίξεις")
+    # plt.title("10 πρώτες Χώρες καταγωγής με το μεγαλύτερο μερίδιο στις αφίξεις "+title)
+    # plt.xlabel("Χώρα")
+    # plt.ylabel("Αφίξεις")
+    plt.title("10 first countries with the biggest number of arrivals"+title)
+    plt.xlabel("Country")
+    plt.ylabel("Arrivals")
 
     #plots
     plot = plt.bar(xpos, countries_total)
@@ -265,8 +277,8 @@ def grafhma_2_plots(countries_names, countries_total, title):
         plt.text(bar.get_x() + bar.get_width()/2.0, height, '%d' % int(height), ha='center', va='bottom')
 
 #maximizes plot
-    manager = plt.get_current_fig_manager()
-    manager.resize(*manager.window.maxsize())
+    # manager = plt.get_current_fig_manager()
+    # manager.resize(*manager.window.maxsize())
     plt.show()
 
 

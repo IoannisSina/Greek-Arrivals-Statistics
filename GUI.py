@@ -73,12 +73,18 @@ window.resizable(False, False)
 window.title("GREEK TOURISM STATISTICS")
 
 #titles for all buttons
-title1 = "ΣΥΝΟΛΙΚΕΣ ΑΦΙΞΕΙΣ ΣΤΗΝ ΕΛΛΛΑΔΑ\n ΓΙΑ ΤΗΝ ΠΕΝΤΑΕΤΙΑ 2011-2015"
-title2 = "10 ΠΡΩΤΕΣ ΧΩΡΕΣ ΚΑΤΑΓΩΓΗΣ \nΜΕ ΤΟ ΜΕΓΑΛΥΤΕΡΟ ΜΕΡΙΔΙΟ ΣΤΙΣ ΑΦΙΞΕΙΣ\n(ΕΠΙΛΟΓΗ ΕΤΟΥΣ)"
-title3 = "ΑΦΙΞΕΙΣ ΤΟΥΡΙΣΤΩΝ ΣΤΗΝ ΕΛΛΑΔΑ \nΑΝΑ ΜΕΣΟ ΜΕΤΑΦΟΡΑΣ ΓΙΑ ΤΗΝ ΠΕΝΤΑΕΤΙΑ \n2011-2015"
-title4 = "ΑΦΙΞΕΙΣ ΤΟΥΡΙΣΤΩΝ ΣΤΗΝ ΕΛΛΑΔΑ \nΑΝΑ ΤΡΙΜΗΝΟ ΓΙΑ ΤΗΝ ΠΕΝΤΑΕΤΙΑ \n2011-2015"
-title5 = "ΛΗΨΗ ΤΩΝ ΑΠΑΙΤΟΥΜΕΝΩΝ XLS"
-title6 = "ΔΗΜΙΟΥΡΓΙΑ ΑΠΑΡΑΙΤΗΤΩΝ CSVs"
+# title1 = "ΣΥΝΟΛΙΚΕΣ ΑΦΙΞΕΙΣ ΣΤΗΝ ΕΛΛΛΑΔΑ\n ΓΙΑ ΤΗΝ ΠΕΝΤΑΕΤΙΑ 2011-2015"
+# title2 = "10 ΠΡΩΤΕΣ ΧΩΡΕΣ ΚΑΤΑΓΩΓΗΣ \nΜΕ ΤΟ ΜΕΓΑΛΥΤΕΡΟ ΜΕΡΙΔΙΟ ΣΤΙΣ ΑΦΙΞΕΙΣ\n(ΕΠΙΛΟΓΗ ΕΤΟΥΣ)"
+# title3 = "ΑΦΙΞΕΙΣ ΤΟΥΡΙΣΤΩΝ ΣΤΗΝ ΕΛΛΑΔΑ \nΑΝΑ ΜΕΣΟ ΜΕΤΑΦΟΡΑΣ ΓΙΑ ΤΗΝ ΠΕΝΤΑΕΤΙΑ \n2011-2015"
+# title4 = "ΑΦΙΞΕΙΣ ΤΟΥΡΙΣΤΩΝ ΣΤΗΝ ΕΛΛΑΔΑ \nΑΝΑ ΤΡΙΜΗΝΟ ΓΙΑ ΤΗΝ ΠΕΝΤΑΕΤΙΑ \n2011-2015"
+# title5 = "ΛΗΨΗ ΤΩΝ ΑΠΑΙΤΟΥΜΕΝΩΝ XLS"
+# title6 = "ΔΗΜΙΟΥΡΓΙΑ ΑΠΑΡΑΙΤΗΤΩΝ CSVs"
+title1 = "TOTAL ARRIVALS IN GREECE\n FROM 2011 TO 2015"
+title2 = "10 FIRST COUNTRIES \n WITH THE BIGGEST NUMBER OF ARRIVALS \n(CHOOSE YEAR)"
+title3 = "ARRIVALS OF TOURISTS IN GREECE \n BY MEANS OF TRANSPORT 2011-2015"
+title4 = "ARRIVALS OF TOURISTS IN GREECE \n PER QUARTER 2011-2015"
+title5 = "DOWNLOAD NEEDED XLS"
+title6 = "CREATE NEEDED CSVs"
 
 
 #button placement 
@@ -86,7 +92,7 @@ btn1 = Button(window, text=title1, bg="black", fg="cyan", width=200, height=200,
 btn1.place(x = 0, y = 0, width = 300, height = 150)
 
 #set button 2 and combo box for year choice
-combo = ttk.Combobox(window, state="readonly", values=(2011, 2012, 2013, 2014, 2015, "ΓΙΑ ΟΛΕΣ ΤΙΣ ΧΡΟΝΙΕΣ"))
+combo = ttk.Combobox(window, state="readonly", values=(2011, 2012, 2013, 2014, 2015, "ALL YEARS"))
 combo.current(5) #set the selected item
 combo.place(x = 300, y = 130, width = 300, height = 20)
 btn2 = Button(window, text=title2, bg="black", fg="cyan", font=("Arial",10,"bold"), command=lambda : buttonClick2(combo))
