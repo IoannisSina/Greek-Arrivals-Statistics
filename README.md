@@ -9,6 +9,20 @@ Statistics on tourist arrivals in Greece 2011-2015 :airplane: :car: :train: :shi
 4. Press andy chart you want
  
  
-**GUI**  
-![alt text](https://github.com/IoannisSina/Greece_tourism_statistics/tree/main/Screenshots/gui_en.png?raw=true)
-![alt text](https://github.com/IoannisSina/Greece_tourism_statistics/tree/main/Screenshots/by_means.png?raw=true)
+**Screenshots**  
+
+GUI:
+
+![](/Screenshots/gui_en.png)
+
+Total Arrivals 2011-2015:
+
+![](/Screenshots/Total_arrivals.png)
+
+Arrivals by means of transport 2011-2015:
+
+![](/Screenshots/by_means.png)
+
+Arrivals by quarter 2011-2015:
+
+![](/Screenshots/quarter.png)
