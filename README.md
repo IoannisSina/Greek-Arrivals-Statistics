@@ -1,15 +1,15 @@
-**Greece_tourism_statistics**  
-Statistics on tourist arrivals in Greece 2011-2015 :airplane: :car: :train: :ship: :bar_chart:  
+## Description ⚡
+Statistics of tourist arrivals in Greece 2011-2015 :car: :airplane: :ship: :train: :bar_chart:  
 
-**Steps to run** :runner:
+## Steps to run :runner:
 
-1. Run GUI.py
-2. Download the required XLS
-3. Create required CSVs
-4. Press andy chart you want
+- Run GUI.py
+- Download the required XLS
+- Create required CSVs
+- Press andy chart you want
  
  
-**Screenshots** 📸
+## Screenshots 📸
 
 GUI:
 
