@@ -3,10 +3,36 @@ Statistics of tourist arrivals in Greece 2011-2015 :car: :airplane: :ship: :trai
 
 ## Steps to run :runner:
 
-- Run GUI.py
-- Download the required XLS
-- Create required CSVs
-- Press andy chart you want
+Clone repository and cd to the folder
+~~~
+git clone https://github.com/IoannisSina/Greek-Arrivals-Statistics
+cd Greek-Arrivals-Statistics
+~~~
+
+Create virtual enviroment and activate it:
+~~~
+python3 -m venv env
+source env/bin/activate  # Activate on Linux/MacOS
+env\Scripts\activate  # Activate on Windows
+~~~
+
+Install requirements:
+~~~
+pip install -r requirements.txt
+~~~
+
+Execute files in specific order
+~~~
+python3 download_XLS.py
+python3 csv_code.py
+python3 plots.py
+~~~
+
+or run with GUI :eyes:
+~~~
+brew install python-tk
+python3 GUI.py
+~~~
  
  
 ## Screenshots 📸
