@@ -4,6 +4,7 @@ import xlrd
 import os
 
 current_directory = os.path.dirname(os.path.realpath(__file__))
+
 def db_create_tables():
     # Open database connection
     conn = sqlite3.connect("python_project.db")
@@ -36,7 +37,7 @@ def db_insert():
 
     # open every xls [2011-2015]
     while(year != 2016):
-        current_book = current_directory + "\\XLS\\" + str(year) + ".xls"
+        current_book = os.path.join(current_directory, "XLS", str(year) + ".xls")
         workbook = xlrd.open_workbook(current_book)
 
         # for every xls open every sheet of it (12 months)
@@ -81,9 +82,6 @@ def db_insert():
         year +=1
     conn.close()       
 
-
-
-db_create_tables()
-db_insert()
-
-
+if __name__ == "__main__":
+    db_create_tables()
+    db_insert()

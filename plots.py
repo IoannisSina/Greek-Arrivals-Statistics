@@ -9,7 +9,7 @@ months = ["january", "february", "march", "april", "may", "june", "july", "augus
 years = ["2011", "2012", "2013", "2014", "2015"]
 
 
-def grafhma_1():
+def plot_1():
 
 
     year = 2011
@@ -18,7 +18,7 @@ def grafhma_1():
     while year != 2016:
         temp_sum = 0
         for i in range(len(months)):
-            csv_name = current_directory+"\\CSV\\" + months[i] + "_" + str(year) +".csv"
+            csv_name = os.path.join(current_directory, "CSV", months[i] + "_" + str(year) + ".csv")
             df = pd.read_csv(csv_name)
 
             data = pd.DataFrame(df)
@@ -57,7 +57,7 @@ def grafhma_1():
     # manager.resize(*manager.window.maxsize())
     plt.show()
 
-def grafhma_2(grafhma_no):
+def plot_2(grafhma_no):
     year = 2011
 
     # dictionary holding sum of tourists per country
@@ -67,7 +67,7 @@ def grafhma_2(grafhma_no):
     #open all csv
     while year != 2016:
         for i in range(len(months)):
-            csv_name = current_directory+ "\\CSV\\" + months[i] + "_" + str(year) +".csv"
+            csv_name = os.path.join(current_directory, "CSV", months[i] + "_" + str(year) + ".csv")
             df = pd.read_csv(csv_name)
             data = pd.DataFrame(df)
 
@@ -125,10 +125,7 @@ def grafhma_2(grafhma_no):
         title = str(grafhma_no)
         grafhma_2_plots(countries_names_each[grafhma_no-2011], countries_total_each[grafhma_no-2011], title)
 
-
-
-
-def grafhma_3():
+def plot_3():
     year = 2011
     air_list = []
     railway_list = []
@@ -141,7 +138,7 @@ def grafhma_3():
         temp_sea = 0
         temp_road = 0
         for i in range(len(months)):
-            csv_name = current_directory+"\\CSV\\" + months[i] + "_" + str(year) +".csv"
+            csv_name = os.path.join(current_directory, "CSV", months[i] + "_" + str(year) + ".csv")
             df = pd.read_csv(csv_name)
 
             data = pd.DataFrame(df)
@@ -200,7 +197,7 @@ def grafhma_3():
     plt.yscale('log')
     plt.show()
 
-def grafhma_4():
+def plot_4():
 
     year = 2011
 
@@ -211,7 +208,7 @@ def grafhma_4():
         quarter_sum = 0
         current_quarter = 0
         for i in range(len(months)):
-            csv_name = current_directory+ "\\CSV\\" + months[i] + "_" + str(year) +".csv"
+            csv_name = os.path.join(current_directory, "CSV", months[i] + "_" + str(year) + ".csv")
             df = pd.read_csv(csv_name)
             data = pd.DataFrame(df)
             
@@ -281,10 +278,8 @@ def grafhma_2_plots(countries_names, countries_total, title):
     # manager.resize(*manager.window.maxsize())
     plt.show()
 
-
-
-
-# grafhma_1()
-# grafhma_2(-1)
-# grafhma_3()
-# grafhma_4()
+if __name__ == "__main__":
+    plot_1()
+    plot_2(-1)
+    plot_3()
+    plot_4()

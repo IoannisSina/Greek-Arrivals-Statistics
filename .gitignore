@@ -1,0 +1,13 @@
+# virtual enviroment folders
+bin/
+lib/
+share/
+env/
+
+CSV/
+XLS/
+
+*.pyc
+python_project.db
+
+.DS_Store

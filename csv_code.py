@@ -8,15 +8,18 @@ def create_csv():
     months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
     header = ["country", "air", "railway", "sea", "road", "total"]
     current_directory = os.path.dirname(os.path.realpath(__file__))
+
+    csv_directory = os.path.join(current_directory, "CSV")
+    if not os.path.exists(csv_directory): os.makedirs(csv_directory)
+
     while(year != 2016):
-        current_book = current_directory + "\\XLS\\" + str(year) + ".xls"
+        current_book = os.path.join(current_directory, "XLS", str(year) + ".xls")
         workbook = xlrd.open_workbook(current_book)
 
         # for every xls open every sheet of it (12 months)
         for i in range(len(months)):
             record = []
             table = []
-            csv_name = current_directory + "\\CSV\\" + months[i] + "_" + str(year) + ".csv"
             current_worksheet = workbook.sheet_by_index(i)
 
             total_rows = current_worksheet.nrows
@@ -46,13 +49,14 @@ def create_csv():
                     #append the record to the table list
                     table.append(record)
                     record = []
+            
             # write every record in the table in the csv
-            with open(csv_name, 'w', newline='') as f:
+            with open(os.path.join(csv_directory, months[i] + "_" + str(year) + ".csv"), 'w', newline='') as f:
                 writer = csv.writer(f)
                 writer.writerow(header)
                 for rec in table:
                     writer.writerow(rec)
         year +=1
-        
 
-#create_csv()
+if __name__ == "__main__":
+    create_csv()
